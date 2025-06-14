@@ -1,0 +1,110 @@
+#root {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+.App {
+  text-align: center;
+  background-color: #1c1b21;
+  height: -webkit-fill-available;
+  display: flex;
+  align-items: center;
+  color: white;
+  flex-direction: row;
+  justify-content: space-between;
+  column-gap: 16px;
+  padding: 16px;
+}
+
+.sideBar {
+  width: 100px;
+  background-color: #070707;
+  height: fit-content;
+  min-height: 20%;
+  max-height: 80%;
+  border-radius: 10px;
+  border: 1px solid #6f6f6f8c;
+  display: flex;
+  row-gap: 16px;
+  flex-direction: column;
+  padding: 8px;
+  align-items: center;
+}
+.facesList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  row-gap: 8px;
+  margin: 0;
+  height: fit-content;
+  max-height: 560px;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+.face {
+  height: 64px;
+  width: 64px;
+}
+.face > img {
+  height: 64px;
+  width: 64px;
+  border-radius: 10px;
+}
+
+.mainSection {
+  width: -webkit-fill-available;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.gallery {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  overflow-y: scroll;
+  column-gap: 32px;
+  row-gap: 32px;
+}
+.galleryTitle {
+  padding-left: 10px;
+  font-family: system-ui;
+}
+
+.imageCard {
+  height: 300px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.imageCard > img {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+}
+.previewSection {
+  width: 500px;
+  background-color: #26262e;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.regularButton {
+  height: 32px;
+  background-color: white;
+  width: 200px;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  text-decoration: none;
+}
