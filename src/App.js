@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import "./App.css";
 import SideBar from "./components/SideBar";
 import MainSection from "./components/MainSection";
@@ -6,16 +6,43 @@ import PreviewSection from "./components/PreviewSection";
 
 function App() {
   const [selectedFace, setSelectedFace] = useState(null);
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImageId, setSelectedImageId] = useState(null);
+  const [selectedImageData, setSelectedImageData] = useState(null);
   const [uploadedImages, setUploadedImages] = useState([]);
 
   const handleFaceSelect = useCallback((faceId) => {
     setSelectedFace(faceId === selectedFace ? null : faceId);
   }, [selectedFace]);
 
-  const handleImageSelect = useCallback((image) => {
-    setSelectedImage(image);
+  const handleImageSelect = useCallback((imageId, imageData) => {
+    setSelectedImageId(imageId);
   }, []);
+
+  // Use useEffect to update selected image data without causing UI reload
+  useEffect(() => {
+    if (selectedImageId) {
+      // Find the image data based on ID
+      const foundImage = uploadedImages.find(img => img.id === selectedImageId);
+      if (foundImage) {
+        setSelectedImageData(foundImage);
+      } else {
+        // Handle random images
+        const gender = Math.random() < 0.5 ? "men" : "women";
+        const randomNumber = Math.floor(Math.random() * 100);
+        const imageUrl = `https://randomuser.me/api/portraits/${gender}/${randomNumber}.jpg`;
+        
+        setSelectedImageData({
+          id: selectedImageId,
+          url: imageUrl,
+          displayUrl: imageUrl,
+          name: 'Random Portrait',
+          isRandom: true
+        });
+      }
+    } else {
+      setSelectedImageData(null);
+    }
+  }, [selectedImageId, uploadedImages]);
 
   const handleImageUpload = useCallback((files) => {
     const newImages = Array.from(files).map((file, index) => ({
@@ -54,7 +81,7 @@ function App() {
       </div>
       <div className="previewSection">
         <PreviewSection 
-          selectedImage={selectedImage}
+          selectedImage={selectedImageData}
         />
       </div>
     </div>

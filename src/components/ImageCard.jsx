@@ -12,12 +12,12 @@ function ImageCard({ image, onSelect }) {
   }
 
   const handleClick = () => {
-    const imageData = {
+    // Only pass the image ID to prevent unnecessary data processing
+    onSelect(image.id, {
       ...image,
       url: imageUrl,
       displayUrl: imageUrl
-    };
-    onSelect(imageData);
+    });
   };
 
   return (
