@@ -129,8 +129,8 @@
 .facesList {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
   padding: 0;
   margin: 0;
   flex: 1;
@@ -153,29 +153,45 @@
 }
 
 .face {
-  height: 48px;
-  width: 48px;
-  border-radius: 8px;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   cursor: pointer;
   transition: all 0.2s ease;
+  padding: 8px;
+  border-radius: 8px;
   border: 2px solid transparent;
-  position: relative;
 }
 
 .face:hover {
-  border-color: #3a3a3a;
+  background: #2a2a2a;
 }
 
 .face.selected {
   border-color: #3b82f6;
-  box-shadow: 0 0 0 1px #3b82f6;
+  background: rgba(59, 130, 246, 0.1);
 }
 
-.face img {
+.faceImage {
+  height: 64px;
+  width: 64px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.faceImage img {
   height: 100%;
   width: 100%;
   object-fit: cover;
+}
+
+.faceName {
+  font-size: 11px;
+  color: #cccccc;
+  text-align: center;
+  font-weight: 500;
+  line-height: 1.2;
 }
 
 .uploadSection {
@@ -420,7 +436,7 @@
   }
 
   .facesList {
-    grid-template-columns: repeat(20, 48px);
+    grid-template-columns: repeat(20, 80px);
     overflow-x: auto;
     overflow-y: hidden;
   }
