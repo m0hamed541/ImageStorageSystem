@@ -13,7 +13,7 @@ function SideBar({ selectedFace, onFaceSelect, onImageUpload, onClearFilter }) {
 
   return (
     <>
-      <div className="profileSection">
+      <div className="profileSection sectionHeader">
         <div className="profileAvatar">
           JD
         </div>

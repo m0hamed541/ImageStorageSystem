@@ -21,7 +21,7 @@ function MainSection({ selectedFace, uploadedImages, onImageSelect }) {
 
   return (
     <>
-      <div className="mainHeader">
+      <div className="mainHeader sectionHeader">
         <h1 className="galleryTitle">
           {selectedFace !== null ? 'Filtered Images' : 'All Images'}
         </h1>

@@ -4,10 +4,8 @@ function ImageCard({ image, onSelect }) {
   let imageUrl;
   
   if (image.url) {
-    // Uploaded image
     imageUrl = image.url;
   } else {
-    // Random image for demo
     const gender = Math.random() < 0.5 ? "men" : "women";
     const randomNumber = Math.floor(Math.random() * 100);
     imageUrl = `https://randomuser.me/api/portraits/${gender}/${randomNumber}.jpg`;

@@ -4,7 +4,7 @@ function PreviewSection({ selectedImage }) {
   if (!selectedImage) {
     return (
       <>
-        <div className="previewHeader">
+        <div className="previewHeader sectionHeader">
           <h2 className="previewTitle">Image Preview</h2>
           <p className="previewSubtitle">Select an image to view details</p>
         </div>
@@ -37,7 +37,7 @@ function PreviewSection({ selectedImage }) {
 
   return (
     <>
-      <div className="previewHeader">
+      <div className="previewHeader sectionHeader">
         <h2 className="previewTitle">Image Preview</h2>
         <p className="previewSubtitle">
           {selectedImage.name || 'Random Portrait'}
