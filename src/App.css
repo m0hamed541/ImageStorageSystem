@@ -35,8 +35,6 @@
   align-items: center;
   gap: 12px;
   padding: 20px;
-  border-bottom: 1px solid #2a2a2a;
-  background: #161616;
 }
 
 .profileAvatar {
@@ -269,6 +267,8 @@
   transition: all 0.2s ease;
   border: 1px solid #2a2a2a;
   position: relative;
+  width: 200px;
+  height: 200px;
 }
 
 .imageCard:hover {
@@ -291,6 +291,16 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
+}
+.sectionHeader {
+  height: 96px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: flex-start;
+  align-items: stretch;
+  border-bottom: 1px solid #2a2a2a;
+  background: #161616;
 }
 
 .previewHeader {

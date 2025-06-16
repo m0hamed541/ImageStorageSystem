@@ -13,7 +13,8 @@ function SideBar({ selectedFace, onFaceSelect, onImageUpload, onClearFilter }) {
 
   return (
     <>
-      <div className="profileSection sectionHeader">
+      <div className=" sectionHeader">
+        <div className="profileSection">
         <div className="profileAvatar">
           JD
         </div>
@@ -24,6 +25,7 @@ function SideBar({ selectedFace, onFaceSelect, onImageUpload, onClearFilter }) {
         <button className="logoutButton" onClick={handleLogout}>
           <LogOut size={18} />
         </button>
+        </div>
       </div>
 
       <div className="facesSection">
