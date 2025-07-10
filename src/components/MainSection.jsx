@@ -23,7 +23,7 @@ function MainSection({ selectedFace, uploadedImages, onImageSelect }) {
     <>
       <div className="mainHeader sectionHeader">
         <h1 className="galleryTitle">
-          {selectedFace !== null ? 'Filtered Images' : 'All Images'}
+          {selectedFace !== null ? 'Filtered Images ' : 'All Images'}
         </h1>
         <p className="imageCount">
           {filteredImages.length} {filteredImages.length === 1 ? 'image' : 'images'}

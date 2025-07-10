@@ -1,6 +1,7 @@
 import React from "react";
 
-function PreviewSection({ selectedImage }) {
+function PreviewSection() {
+  let selectedImage = null;
   if (!selectedImage) {
     return (
       <>
