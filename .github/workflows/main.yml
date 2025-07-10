@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: ${{ secrets.NODE_VERSION }}
       - name: Dependency Installation
-        run : npm install
+        run : npm install --legacy-peer-deps
 
       - name: Build
         run: npm run build
